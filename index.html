@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="style.css">
+        <title>Trivia</title>
+    </head>
+
+    <body>
+        <div id="mainContainer">
+            <div id="controls">
+                <h1 id="triviaTitle">Trivia</h1>
+                <div id="createGroup">
+                    <input type="text" id="GroupNameInput" placeholder="Group Name"><br>
+                    <input type="file" id="GroupFileInput" accept="image/*"><br>
+                    <button id="addGroupButton">Add Group</button>
+                </div>
+                <br>
+                <button id="startGameButton">Start Game</button>
+            </div>
+
+            <div id="groups">
+                <h1 id="groupsTitle">Groups</h1>
+                <ul id="groupsList"></ul>
+            </div>
+
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
