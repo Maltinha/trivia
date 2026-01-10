@@ -1,8 +1,8 @@
 let groups = [];
 
 function addGroup(){
-    const groupName = document.getElementById('GroupNameInput').value.trim();
-    const fileInput = document.getElementById('GroupFileInput');
+    const groupName = document.getElementById('groupNameInput').value.trim();
+    const fileInput = document.getElementById('groupFileInput');
     const file = fileInput.files[0];
 
     if(!groupName) return;
@@ -17,11 +17,11 @@ function addGroup(){
         reader.readAsDataURL(file); 
 
     } else {
-        groups.push({name: groupName, points: 0, image : null});
+        groups.push({name: groupName.toUpperCase(), points: 0, image : null});
         renderGroups();
     }
 
-    document.getElementById('GroupNameInput').value = '';
+    document.getElementById('groupNameInput').value = '';
     fileInput.value = '';
 }
 
@@ -31,19 +31,16 @@ function renderGroups() {
 
     groups.forEach(group => {
         const li = document.createElement('li');
+        const img = document.createElement('img');
 
-        if (group.image) {
-            const img = document.createElement('img');
-            img.src = group.image;
-            img.alt = group.name;
-            img.classList.add('group-image');
-            li.appendChild(img);
-        }
+        img.src = group.image || '../assets/default_group_image.png';
+        img.classList.add('groupImage');
+        li.appendChild(img);
 
-        const nameSpan = document.createElement('span');
+        const nameSpan = document.createElement('h2');
         nameSpan.textContent = group.name;
         li.appendChild(nameSpan);
-        li.classList.add('group-item');
+        li.classList.add('groupItem');
 
         ul.appendChild(li);
     });

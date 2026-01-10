@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="../css/mainPage.css">
+        <title>Trivia</title>
+    </head>
+
+    <body>
+        <div class = "mainContainer">
+            <div class = "controls">
+                <h1 class = "titles">Trivia</h1>
+                <div class = "createGroup">
+                    <input type="text" id="groupNameInput" placeholder="Group Name"><br>
+                    <input type="file" id="groupFileInput" accept="image/*" hidden>
+                    <label for="groupFileInput" id="fileButton">Upload Group Image</label><br>
+                    <button id="addGroupButton">Add Group</button>
+                </div>
+                <br>
+                <button id="startGameButton">Start Game</button>
+            </div>
+
+            <div class = "groups">
+                <h1 class="titles">Groups</h1>
+                <ul id="groupsList"></ul>
+            </div>
+
+            <div class = "levels">
+                <h1 class="titles">Levels</h1>
+                <ul>
+                    <li class="levelItem">
+                        <img class="levelImg" src="../assets/geography.png">
+                        <h2>Geography</h2>
+                    </li>
+                    <li class="levelItem">
+                        <img class="levelImg" src="../assets/football.png">
+                        <h2>Football</h2>
+                    </li>
+                    <li class="levelItem">
+                        <img class="levelImg" src="../assets/memes.png">
+                        <h2>Memes</h2>
+                    </li>
+                    <li class="levelItem">
+                        <img class="levelImg" src="../assets/music.png">
+                        <h2>Music</h2>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        <script src="../js/mainPage.js"></script>
+    </body>
+</html>

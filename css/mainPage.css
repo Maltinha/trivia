@@ -1,0 +1,142 @@
+body{
+    background: linear-gradient(to bottom,rgb(116, 5, 116),rgb(192, 110, 124));
+    min-height: 100vh;
+    margin : 0;
+    font-family: 'Courier New';
+}
+
+.mainContainer{
+  display: flex;  
+  justify-content: space-around; 
+}
+
+.titles {
+    display: inline-block; 
+    border: solid 5px white;
+    border-radius: 0 20px 0 20px;
+    background-color: teal;
+    padding: 5px 20px 0 20px;
+
+    font-size: 40px;
+    color: white;
+}
+
+.controls{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+    flex: 1;
+    margin-left: 20px;
+}
+
+.createGroup{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+    border: solid 5px white;
+    padding: 30px 10px;
+    background-color: teal;
+    border-radius: 0 20px 0 20px;
+}
+
+#groupNameInput {
+    width: 220px;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-family: 'Courier New';
+
+    border: 2px solid white;
+    border-radius: 10px;
+
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #333;
+
+    outline: none;
+    transition: all 0.5s ease;
+}
+#groupNameInput:focus {
+    border-color: teal;
+}
+
+#fileButton {
+    padding: 10px 15px;
+    font-size: 16px;
+    color: #333;
+    font-weight: bold;
+
+    background-color: rgba(255, 255, 255, 0.9);
+    border: none;
+    border-radius: 10px;
+
+    cursor: pointer;
+    transition: all 0.5s ease;
+
+}
+
+#addGroupButton{
+    background-color: rgba(255, 255, 255, 0.9);              
+    color: teal;    
+    font-family: 'Courier New';
+    font-weight: bold;             
+    border: none;                
+    border-radius: 8px;          
+    
+    padding: 10px 20px;   
+    color: teal;
+              
+    cursor: pointer;              
+    font-size: 20px;              
+    transition: background-color 0.5s, transform 0.5s; 
+}
+#addGroupButton:hover, #startGameButton:hover, .file-button:hover {
+    background-color: gray;  
+    color: white;
+    transform: translateY(-2px); 
+}
+
+
+.groups, .levels{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+    flex: 1;
+}
+
+.groupItem, .levelItem{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    font-weight: bold;
+    color:white;
+    margin-bottom: 10px;
+}
+
+.groupImage, .levelImg{
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: solid 2px white;
+}
+
+
+#startGameButton{
+    background-color:rgba(255, 255, 255, 0.9);      
+    color: teal;                 
+    border: none;                 
+    border-radius: 8px;           
+    padding: 10px 20px;           
+    cursor: pointer;              
+    font-size: 30px;   
+    font-family: 'Courier New';
+    font-weight: bold;
+    margin-left: 5px;
+    transition: background-color 0.5s, transform 0.5s; 
+}
+
+
+
