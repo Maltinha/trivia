@@ -43,7 +43,7 @@ function renderGroups() {
         const li = document.createElement('li');
         const img = document.createElement('img');
 
-        img.src = group.image || '../assets/default_group_image.png';
+        img.src = group.image || './assets/default_group_image.png';
         img.classList.add('groupImage');
         li.appendChild(img);
 
@@ -74,4 +74,4 @@ document.getElementById('startGameButton').addEventListener('click', () => {
         return;
     }
     localStorage.setItem('groups', JSON.stringify(groups));
-    window.location.href = 'gameScreen.html';});
+    window.location.href = "./pages/gameScreen.html";});
