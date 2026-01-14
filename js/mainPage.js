@@ -11,13 +11,23 @@ function addGroup(){
         const reader = new FileReader();
         reader.onload = function(e){
             const imageDataUrl = e.target.result;
-            groups.push({ name: groupName.toUpperCase(), points: 0, image: imageDataUrl });
+            groups.push({ 
+                name: groupName.toUpperCase(),
+                image: imageDataUrl,
+                points: 0,
+                tempPoints:0
+                });
             renderGroups();
         };
         reader.readAsDataURL(file); 
 
     } else {
-        groups.push({name: groupName.toUpperCase(), points: 0, image : null});
+        groups.push({
+            name: groupName.toUpperCase(),
+            image : null,
+            points: 0, 
+            tempPoints:0
+        });
         renderGroups();
     }
 
@@ -42,11 +52,26 @@ function renderGroups() {
         li.appendChild(nameSpan);
         li.classList.add('groupItem');
 
+        const deleteBtn = document.createElement('button');
+        deleteBtn.textContent = 'X';
+        li.appendChild(deleteBtn);
+        deleteBtn.classList.add('deleteGroupButton');
+
+        deleteBtn.addEventListener('click', () => {
+            groups = groups.filter(g => g !== group);
+            renderGroups();
+        });
+
         ul.appendChild(li);
     });
 }
 
 
 document.getElementById('addGroupButton').addEventListener('click', addGroup);
-
-
+document.getElementById('startGameButton').addEventListener('click', () => {
+    if(groups.length < 2){
+        alert('Please add at least two groups to start the game.');
+        return;
+    }
+    localStorage.setItem('groups', JSON.stringify(groups));
+    window.location.href = 'gameScreen.html';});

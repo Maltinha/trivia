@@ -1,7 +1,8 @@
-body{
+html, body{
     background: linear-gradient(to bottom,rgb(116, 5, 116),rgb(192, 110, 124));
     min-height: 100vh;
     margin : 0;
+    overflow: hidden;
     font-family: 'Courier New';
 }
 
@@ -13,6 +14,7 @@ body{
 .titles {
     display: inline-block; 
     border: solid 5px white;
+    box-shadow: 0 0 0 2px black;
     border-radius: 0 20px 0 20px;
     background-color: teal;
     padding: 5px 20px 0 20px;
@@ -36,6 +38,7 @@ body{
     gap: 10px;
     align-items: flex-start;
     border: solid 5px white;
+    box-shadow: 0 0 0 2px black;
     padding: 30px 10px;
     background-color: teal;
     border-radius: 0 20px 0 20px;
@@ -48,6 +51,7 @@ body{
     font-family: 'Courier New';
 
     border: 2px solid white;
+    box-shadow: 0 0 0 2px black;
     border-radius: 10px;
 
     background-color: rgba(255, 255, 255, 0.9);
@@ -66,6 +70,8 @@ body{
     color: #333;
     font-weight: bold;
 
+    border: 2px solid white;
+    box-shadow: 0 0 0 2px black;
     background-color: rgba(255, 255, 255, 0.9);
     border: none;
     border-radius: 10px;
@@ -75,21 +81,26 @@ body{
 
 }
 
-#addGroupButton{
-    background-color: rgba(255, 255, 255, 0.9);              
+#addGroupButton, #startGameButton{
+    background-color: rgba(255, 255, 255, 0.9);      
+    border: solid 2px white;        
     color: teal;    
     font-family: 'Courier New';
-    font-weight: bold;             
-    border: none;                
+    font-weight: bold;                             
     border-radius: 8px;          
-    
     padding: 10px 20px;   
-    color: teal;
-              
-    cursor: pointer;              
-    font-size: 20px;              
+    cursor: pointer;                           
     transition: background-color 0.5s, transform 0.5s; 
 }
+
+#startGameButton{
+    font-size: 30px;
+}
+
+#addGroupButton{
+    font-size: 20px;
+}
+
 #addGroupButton:hover, #startGameButton:hover, .file-button:hover {
     background-color: gray;  
     color: white;
@@ -115,28 +126,38 @@ body{
     margin-bottom: 10px;
 }
 
+.groupItem:hover{
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+}
+
 .groupImage, .levelImg{
     width: 60px;
     height: 60px;
     object-fit: cover;
     border-radius: 50%;
     border: solid 2px white;
+    box-shadow: 0 0 0 2px black;
 }
 
+.deleteGroupButton{
+    opacity: 0;
+    pointer-events: none;
 
-#startGameButton{
-    background-color:rgba(255, 255, 255, 0.9);      
-    color: teal;                 
-    border: none;                 
-    border-radius: 8px;           
-    padding: 10px 20px;           
-    cursor: pointer;              
-    font-size: 30px;   
-    font-family: 'Courier New';
+    color: white;
+    border: none;
+
     font-weight: bold;
-    margin-left: 5px;
-    transition: background-color 0.5s, transform 0.5s; 
+    cursor: pointer;
+
 }
+
+.groupItem:hover .deleteGroupButton {
+    opacity: 1;
+    pointer-events: auto;
+    background-color: transparent;
+}
+
 
 
 
