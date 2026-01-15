@@ -1,28 +1,23 @@
+import {gameQuestions} from "../assets/questionsFile.js";
+
 const groups = JSON.parse(localStorage.getItem('groups')) || [];
 let questionIndex = 0;
 let currentGroup = 0;
-
-let questions = [
-  {
-    question: "What is the capital of France?",
-    options: ["Berlin", "Madrid", "Paris", "Rome"],
-    answer: "Paris"
-  },
-  {
-    question: "Which planet is known as the Red Planet?",
-    options: ["Earth", "Mars", "Jupiter", "Saturn"],
-    answer: "Mars"
-  },
-  {
-    question: "What is the largest ocean on Earth?",
-    options: ["Atlantic Ocean", "Indian Ocean", "Arctic Ocean", "Pacific Ocean"],
-    answer: "Pacific Ocean"
-  }
-];
+let questions = "";
+let currentCategory = 0;
 
 // Aux functions
 function randomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function setCategory(){
+  let val = gameQuestions[currentCategory];
+  let category = val.category;
+  questions = val.questions;
+
+  let catImg = document.getElementById("levelImage");
+  catImg.src = "../assets/" + category + ".png";
 }
 
 // Game logic
@@ -150,6 +145,7 @@ function renderGameScreen(){
       group.tempPoints = 0;
     })
     localStorage.setItem('groups', JSON.stringify(groups));
+    localStorage.setItem('currentCategory', JSON.stringify(currentCategory))
     window.location.href = 'tableScreen.html'
   }
 
@@ -172,9 +168,12 @@ document.getElementById("nextQuestionButton").addEventListener('click', () => {
 
   renderGameScreen();
 });
+
 document.getElementById("revealAnswerButton").addEventListener('click', () => {
   revealRightOption();
 }); 
 
+
+setCategory();
 renderGameScreen();
 
