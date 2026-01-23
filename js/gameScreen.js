@@ -1,10 +1,11 @@
 import {gameQuestions} from "../assets/questionsFile.js";
 
 const groups = JSON.parse(localStorage.getItem('groups')) || [];
+let currentCategory = JSON.parse(localStorage.getItem('currentCategory')) || 0;
+
 let questionIndex = 0;
 let currentGroup = 0;
-let questions = "";
-let currentCategory = 0;
+let questions = [];
 
 // Aux functions
 function randomInt(min, max) {
@@ -20,8 +21,11 @@ function setCategory(){
   catImg.src = "../assets/" + category + ".png";
 }
 
-// Game logic
+function startCategorypoints(){
+  groups.forEach(group => group.categoryPoints.push(0));
+}
 
+// Game logic
 function handleAnswer(button) {
   // Get correct answer and group who is clicking in the button
   const correctAnswer = questions[questionIndex].answer;
@@ -43,7 +47,8 @@ function handleAnswer(button) {
 
   // Check answer, update points and move to next group
   if (button.textContent === correctAnswer) {
-    group.tempPoints += 1;
+    group.categoryPoints[currentCategory] += 1;
+    group.points += 1;
   }
   currentGroup++;
 
@@ -71,7 +76,7 @@ function renderGroups(){
         li.appendChild(img);
 
         const pointsSpan = document.createElement('h2');
-        pointsSpan.textContent = group.tempPoints;
+        pointsSpan.textContent = group.categoryPoints[currentCategory];
         pointsSpan.classList.add('groupPoints');
         li.appendChild(pointsSpan);
 
@@ -140,15 +145,13 @@ function revealRightOption(){
 function renderGameScreen(){
 
   if(questions.length === 0){
-    groups.forEach(group => {
-      group.points += group.tempPoints;
-      group.tempPoints = 0;
-    })
+    currentCategory++;
     localStorage.setItem('groups', JSON.stringify(groups));
     localStorage.setItem('currentCategory', JSON.stringify(currentCategory))
-    window.location.href = 'tableScreen.html'
+    window.location.href = '../pages/tableScreen.html'
   }
 
+  console.log(groups);
   questionIndex = randomInt(0,questions.length-1);
   renderGroups();
   renderQuestion(questionIndex);
@@ -175,5 +178,6 @@ document.getElementById("revealAnswerButton").addEventListener('click', () => {
 
 
 setCategory();
+startCategorypoints();
 renderGameScreen();
 

@@ -15,7 +15,7 @@ function addGroup(){
                 name: groupName.toUpperCase(),
                 image: imageDataUrl,
                 points: 0,
-                tempPoints:0
+                categoryPoints:[]
                 });
             renderGroups();
         };
@@ -26,7 +26,7 @@ function addGroup(){
             name: groupName.toUpperCase(),
             image : null,
             points: 0, 
-            tempPoints:0
+            categoryPoints:[]
         });
         renderGroups();
     }
@@ -69,9 +69,10 @@ function renderGroups() {
 
 document.getElementById('addGroupButton').addEventListener('click', addGroup);
 document.getElementById('startGameButton').addEventListener('click', () => {
-    if(groups.length < 2){
-        alert('Please add at least two groups to start the game.');
+    if(groups.length < 1){
+        alert('Please add at least one group to start the game.');
         return;
     }
+    localStorage.clear();
     localStorage.setItem('groups', JSON.stringify(groups));
     window.location.href = "./pages/gameScreen.html";});
