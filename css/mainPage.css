@@ -7,9 +7,10 @@ html, body{
 }
 
 .mainContainer{
-  display: flex;  
-  justify-content: space-around; 
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
 }
+
 
 .titles {
     display: inline-block; 
@@ -114,6 +115,47 @@ html, body{
     gap: 10px;
     align-items: flex-start;
     flex: 1;
+}
+
+#titlesContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+#maxGroups{
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: century gothic;
+    align-self:end;
+}
+
+#groupsList{
+    background-color: teal;
+    height: 300px;
+    width: 270px;
+    border: white solid 5px;
+    box-shadow: 0 0 0 2px black;
+    border-radius: 20px 0 0 20px;
+    padding : 15px;
+    overflow-y: auto;
+}
+
+#groupsList::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* draggable thumb */
+#groupsList::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 6px;
+}
+
+/* thumb on hover */
+#groupsList::-webkit-scrollbar-thumb:hover {
+  background: #aaa;
 }
 
 .groupItem, .levelItem{

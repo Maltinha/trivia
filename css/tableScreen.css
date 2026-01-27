@@ -69,7 +69,7 @@ html, body{
 
 #tableContainer{
     display: grid;
-    margin:10vw; 
+    padding: 5vw; 
     gap: 2px;
     box-sizing: border-box;
 }

@@ -5,6 +5,9 @@ function addGroup(){
     const fileInput = document.getElementById('groupFileInput');
     const file = fileInput.files[0];
 
+    
+    if(groups.length === 5)return;
+
     if(!groupName) return;
 
     if(file){

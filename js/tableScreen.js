@@ -1,6 +1,7 @@
 import {gameQuestions} from "../assets/questionsFile.js";
 
 const groups = JSON.parse(localStorage.getItem('groups')) || [];
+let currentCategory = JSON.parse(localStorage.getItem('currentCategory')) || 0;
 
 function renderGroups(){
     let groupsDisplay = document.getElementById("groups");
@@ -73,7 +74,12 @@ function renderTable(){
 }
 
 document.getElementById("nextPageButton").addEventListener('click', () => {
-    window.location.href = '../pages/gameScreen.html'
+    if(currentCategory === gameQuestions.length){
+        currentCategory = 0;
+        localStorage.setItem('currentCategory', JSON.stringify(currentCategory));
+        window.location.href = '../pages/rankPage.html';    
+    } 
+    else window.location.href = '../pages/gameScreen.html'
 });
 
 renderGroups();
