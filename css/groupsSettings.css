@@ -1,0 +1,148 @@
+html, body{
+    min-height: 100vh;
+    margin : 0;
+    overflow: hidden;
+    font-family: 'Courier New';
+}
+
+#title{
+    display: inline-block; 
+    border: solid 5px white;
+    box-shadow: 0 0 0 2px black;
+    border-radius: 0 20px 0 20px;
+    background-color: teal;
+    padding: 5px 20px 0 20px;
+
+    font-size: 40px;
+    color: white;
+}
+
+#groupsContainer{
+    background-color: teal;
+    border: solid 2px white;
+    box-shadow: 0 0 0 2px black;
+    border-radius: 20px;
+    height: 70vh;
+    width: 70vw;
+    justify-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+.groupItem{
+    background-color: teal;
+    border: solid 2px white;
+    box-shadow: 0 0 0 2px black;
+    border-radius: 10px;
+    margin: 10px 20px 10px 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.groupContent{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    padding: 5px;
+}
+
+.groupContent img{
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    margin-right: 10px;
+    border: solid 2px white;
+    box-shadow: 0 0 0 2px black;
+}
+
+.groupContent h2{
+    margin: 5px;
+}
+
+.groupContent p{
+    margin: 5px;
+}
+
+.groupText{
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    gap: 5px;
+}
+
+.groupButtons{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.groupButton{
+    background-color: teal;
+    border: solid 2px white;
+    border-radius: 50%;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.groupButton:hover {
+    background-color: lightgray;
+    color: teal;
+}
+
+
+#groupsContainer::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* draggable thumb */
+#groupsContainer::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 6px;
+}
+
+/* thumb on hover */
+#groupsContainer::-webkit-scrollbar-thumb:hover {
+  background: #aaa;
+}
+
+.homeButton{
+    position: absolute;
+    top: 25px;
+    right: 20px;
+
+    background-color: teal;      
+    border: solid 2px white;    
+    box-shadow: 0 0 0 2px black;;    
+    color: white;    
+    font-family: 'Courier New';
+    font-weight: bold;                             
+    border-radius: 50%;          
+    padding: 10px;   
+    cursor: pointer;                           
+    transition: background-color 0.2s; 
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.homeButton:hover{
+    background-color: gray;  
+}

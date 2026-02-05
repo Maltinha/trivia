@@ -1,4 +1,6 @@
 import {gameQuestions} from "../assets/questionsFile.js";
+import { applyBackgroundGradient } from '../assets/theme.js';
+applyBackgroundGradient();
 
 const groups = JSON.parse(localStorage.getItem('groups')) || [];
 let currentCategory = JSON.parse(localStorage.getItem('currentCategory')) || 0;
@@ -75,8 +77,6 @@ function renderTable(){
 
 document.getElementById("nextPageButton").addEventListener('click', () => {
     if(currentCategory === gameQuestions.length){
-        currentCategory = 0;
-        localStorage.setItem('currentCategory', JSON.stringify(currentCategory));
         window.location.href = '../pages/rankPage.html';    
     } 
     else window.location.href = '../pages/gameScreen.html'

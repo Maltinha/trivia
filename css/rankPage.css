@@ -1,5 +1,4 @@
 html, body{
-    background: linear-gradient(to bottom,rgb(116, 5, 116),rgb(192, 110, 124));
     min-height: 100vh;
     margin : 0;
     overflow: hidden;
@@ -11,7 +10,7 @@ html, body{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 85vh;
+    height: 100vh;
     color: white;
     box-sizing: border-box;
 }
@@ -34,29 +33,34 @@ html, body{
     box-sizing: border-box;
 }
 
-#homeSection{
-    display: flex;
-    justify-content: end;
-    height: 15vh;
-}
-
-#homeButton{
-    background-color: rgba(255, 255, 255, 0.9);      
-    border: solid 2px white;      
-    color: teal;    
-    font-family: 'Courier New';
-    font-weight: bold;                             
-    border-radius: 8px;          
-    padding: 10px 20px; 
-    margin: 10px 10px;  
-    cursor: pointer;                           
-    transition: background-color 0.5s, transform 0.5s; 
-    font-size: 20px;
+#winnerPoints{
+    font-size: 30px;
+    color: white;
+    font-weight: bolder;
     box-sizing: border-box;
 }
 
-#homeButton:hover {
+#homeButton{
+    position: absolute;
+    top: 25px;
+    right: 20px;
+
+    background-color: teal;      
+    border: solid 2px white;    
+    box-shadow: 0 0 0 2px black;;    
+    color: white;    
+    font-family: 'Courier New';
+    font-weight: bold;                             
+    border-radius: 50%;          
+    padding: 10px;   
+    cursor: pointer;                           
+    transition: background-color 0.2s; 
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#homeButton:hover{
     background-color: gray;  
-    color: white;
-    transform: translateY(-2px); 
 }

@@ -1,4 +1,6 @@
 import {gameQuestions} from "../assets/questionsFile.js";
+import { applyBackgroundGradient } from '../assets/theme.js';
+applyBackgroundGradient();
 
 const groups = JSON.parse(localStorage.getItem('groups')) || [];
 let currentCategory = JSON.parse(localStorage.getItem('currentCategory')) || 0;
@@ -49,6 +51,7 @@ function handleAnswer(button) {
   if (button.textContent === correctAnswer) {
     group.categoryPoints[currentCategory] += 1;
     group.points += 1;
+
   }
   currentGroup++;
 

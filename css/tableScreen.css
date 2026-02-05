@@ -1,5 +1,4 @@
 html, body{
-    background: linear-gradient(to bottom,rgb(116, 5, 116),rgb(192, 110, 124));
     min-height: 100vh;
     margin : 0;
     overflow: hidden;

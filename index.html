@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="./css/mainPage.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <title>Trivia</title>
     </head>
 
@@ -50,7 +51,30 @@
                 </ul>
             </div>
 
+            <button class="settingsButton"><i class="material-icons">settings</i></button>
+
+            <div id="settingsPanel">
+                <h3>Settings</h3>
+                <label>
+                    Background color
+                    <div class="colorPickers">
+                        <p>Top color: </p>
+                        <input type="color" id="bgColorPicker1">
+                    </div>
+                    <div class="colorPickers">
+                        <p>Bottom color: </p>
+                        <input type="color" id="bgColorPicker2">
+                    </div>
+                </label>
+                <div id="gridSettings">
+                    <button id="groupSettings"><i class="material-icons">group</i></button>
+                    <button id="categorySettings"><i class="material-icons">category</i></button>
+                    <button id="closeSettings">Close</button>
+                    <button id="resetSettings">Reset</button>
+                </div>
+            </div>
         </div>
-        <script src="./js/mainPage.js"></script>
+
+        <script type="module" src="./js/mainPage.js"></script>
     </body>
 </html>
