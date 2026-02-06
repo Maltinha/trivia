@@ -3,10 +3,15 @@ applyBackgroundGradient();
 
 let groups = JSON.parse(localStorage.getItem('groups')) || [];
 let permGroups = JSON.parse(localStorage.getItem('permGroups')) || [];
+let selectedCategories = JSON.parse(localStorage.getItem('selectedCategories')) || ['Geography','Football','Records','Music']
 
 //localStorage.clear();
+console.log("Permanent Groups");
 console.log(permGroups);
+console.log("Groups");
 console.log(groups);
+console.log("Selected Categories");
+console.log(selectedCategories);
 
 function addGroup(){
     const groupName = document.getElementById('groupNameInput').value.trim();
@@ -80,11 +85,11 @@ function addGroup(){
 }
 
 function renderGroups() {
-    const ul = document.getElementById('groupsList');
-    ul.innerHTML = '';
+    const container = document.getElementById('groupsContainer');
+    container.innerHTML = '';
 
     groups.forEach(group => {
-        const li = document.createElement('li');
+        const groupItem = document.createElement('div');
         const img = document.createElement('img');
         const content = document.createElement('div');
         content.classList.add('groupContent');
@@ -104,9 +109,9 @@ function renderGroups() {
         content.appendChild(img);
         content.appendChild(nameSpan);
         deleteBtn.appendChild(cross);
-        li.appendChild(content);
-        li.appendChild(deleteBtn);
-        li.classList.add('groupItem');
+        groupItem.appendChild(content);
+        groupItem.appendChild(deleteBtn);
+        groupItem.classList.add('groupItem');
 
 
         deleteBtn.addEventListener('click', () => {
@@ -115,11 +120,35 @@ function renderGroups() {
             renderGroups();
         });
 
-        ul.appendChild(li);
+        container.appendChild(groupItem);
     });
 }
 
+function renderCategories(){
+    const container = document.getElementById('categoriesContainer');
+    container.innerHTML = "";
+
+    selectedCategories.forEach(sc => {
+        let categoryItem = document.createElement('div');
+        categoryItem.className = "categoryItem";
+
+        let categoryImg = document.createElement('img');
+        categoryImg.src = "../assets/"+sc+".png";
+        categoryImg.className = 'categoryImg';
+
+        const categoryName = document.createElement('h2');
+        categoryName.textContent = sc;
+
+        categoryItem.appendChild(categoryImg);
+        categoryItem.appendChild(categoryName);
+
+        container.appendChild(categoryItem);
+    })
+}
+
+
 renderGroups();
+renderCategories();
 document.getElementById('addGroupButton').addEventListener('click', addGroup);
 document.getElementById('startGameButton').addEventListener('click', () => {
     if(groups.length < 1){

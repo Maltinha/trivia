@@ -108,7 +108,7 @@ html, body{
 }
 
 
-.groups, .levels{
+.groups, .categories{
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -131,7 +131,7 @@ html, body{
     align-self:end;
 }
 
-#groupsList{
+#groupsContainer{
     background-color: teal;
     height: 300px;
     width: 270px;
@@ -142,18 +142,18 @@ html, body{
     overflow-y: auto;
 }
 
-#groupsList::-webkit-scrollbar {
+#groupsContainer::-webkit-scrollbar {
   width: 10px;
 }
 
 /* draggable thumb */
-#groupsList::-webkit-scrollbar-thumb {
+#groupsContainer::-webkit-scrollbar-thumb {
   background: #888;
   border-radius: 6px;
 }
 
 /* thumb on hover */
-#groupsList::-webkit-scrollbar-thumb:hover {
+#groupsContainer::-webkit-scrollbar-thumb:hover {
   background: #aaa;
 }
 
@@ -167,7 +167,20 @@ html, body{
     margin-bottom: 10px;
 }
 
-.levelItem{
+#categoriesContainer{
+    display: flex;
+    flex-direction: column;
+    background-color: teal;
+    height: 300px;
+    width: 270px;
+    border: white solid 5px;
+    box-shadow: 0 0 0 2px black;
+    border-radius: 20px 0 0 20px;
+    padding : 15px;
+    overflow-y: auto;
+}
+
+.categoryItem{
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -187,7 +200,7 @@ html, body{
     background-color: transparent;
 }
 
-.groupImage, .levelImg{
+.groupImage, .categoryImg{
     width: 60px;
     height: 60px;
     object-fit: cover;

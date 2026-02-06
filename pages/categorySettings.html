@@ -3,11 +3,21 @@
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="../css/categorySettings.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <title>Categories</title>
     </head>
     <body>
-
-
+        <h1 id="title">Game Categories</h1>
+        <div id="numberOfQuestions"> 
+            <p>Questions per category: </p>
+            <div id="questionsCounter">
+                <button id="decreaseButton"><i class="material-icons">remove</i></button>
+                <span id="questionsNumber"></span>
+                <button id="increaseButton"><i class="material-icons">add</i></button>
+            </div>
+        </div>
+        <div id="categoriesContainer"></div>
+        <button class="homeButton"><i class="material-icons">home</i></button>
         <script type="module" src="../js/categorySettings.js"></script>
     </body>
 </html>

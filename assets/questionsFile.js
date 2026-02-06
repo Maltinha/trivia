@@ -1,117 +1,227 @@
-export let gameQuestions = [{
-    category: "geography",
-    questions: [
-        {
-            question: "Which country has the largest population in the world?",
-            options: ["Russia", "India", "China", "United States of America"],
-            answer: "India"
-        },
-        {
-            question: "Which European capital was once underwater?",
-            options: ["Amsterdam", "Venice", "Copenhagen", "Stockholm"],
-            answer: "Amsterdam"
-        },
-        {
-            question: "Which country has a town actually called Dildo?",
-            options: ["Ireland", "Canada", "Australia", "United Kingdom"],
-            answer: "Canada"
-        },
-        {
-            question: "Which desert is the biggest in the world?",
-            options: ["Sahara", "Gobi", "Kalahari", "Antarctica"],
-            answer: "Antarctica"
-        },
-        {
-            question: "Which capital city is built on 14 islands and has 57 bridges?",
-            options: ["Amsterdam", "Stockholm", "Venice", "Bangkok"],
-            answer: "Stockholm"
-        }
-    ]},
-    {   
-    category: "football",
-    questions: [
-        {
-            question: "Which country hosted the first FIFA World Cup in 1930?",
-            options: ["Uruguay", "Brazil", "Italy", "France"],
-            answer: "Uruguay"
-        },
-        {
-            question: "How many goals did Cristiano Ronaldo score in the 2013-14 Champions League season with Real Madrid?",
-            options: ["17", "16", "12", "19"],
-            answer: "17"
-        },
-        {
-            question: "Which footballer once scored a goal from the halfway line in a Champions League match?",
-            options: ["Cristiano Ronaldo", "Lionel Messi", "David Beckham", "Zlatan Ibrahimović"],
-            answer: "Zlatan Ibrahimović"
-        },
-        {
-            question: "Which goalkeeper has the record for scoring the most goals in professional football?",
-            options: ["Rogério Ceni", "Manuel Neuer", "Peter Schmeichel", "Ederson"],
-            answer: "Rogério Ceni"
-        },
-        {
-            question: "Who was the last Ballon d'Or winner before the Cristiano Ronaldo and Lionel Messi era?",
-            options: ["Kaká", "Ronaldinho", "Thierry Henry", "Wesley Sneijder"],
-            answer: "Kaká"
-        }
-    ]},
-    {   
-    category: "world_records",
-    questions: [
-        {
-            question: "Which unusual endurance feat was performed for over 9 hours straight?",
-            options: ["Hula hooping", "Juggling", "Standing on one leg", "Bouncing on a ball"],
-            answer: "Hula hooping"
-        },
-        {
-            question: "Which weird record involves the most number of T-shirts worn at once?",
-            options: ["257", "150", "300", "200"],
-            answer: "257"
-        },
-        {
-            question: "Which unusual feat is the fastest time to inflate a balloon with the nose and pop it?",
-            options: ["12.5 seconds", "8.3 seconds", "10.7 seconds", "15 seconds"],
-            answer: "12.5 seconds"
-        },
-        {
-            question: "What is the record for the most straws stuffed in a mouth at once?",
-            options: ["400", "200", "350", "500"],
-            answer: "400"
-        },
-        {
-            question: "Which is the fastest time to peel and eat a banana?",
-            options: ["8.17 seconds", "5.23 seconds", "10.5 seconds", "6.78 seconds"],
-            answer: "8.17 seconds"
-        },
-    ]},
-    {   
-    category: "music",
-    questions: [
-        {
-            question: "Which song features Jamie Foxx performing the vocals?",
-            options: ["Gold Digger", "Hey Ya!", "In Da Club", "Yeah!"],
-            answer: "Gold Digger"
-        },
-        {
-            question: "In the Portuguese song 'O Sorveteiro' by Quim Barreiros, which ice cream flavor is NOT mentioned?",
-            options: ["Banana", "Chocolate", "Baunilha", "Abacaxi"],
-            answer: "Chocolate"
-        },
-        {
-            question: "In 'Bohemian Rhapsody' by Queen, which word does NOT appear?",
-            options: ["Scaramouche", "Fandango", "Galileo", "Abracadabra"],
-            answer: "Abracadabra"
-        },
-        {
-            question: "Which artist holds the record for the most Grammy Awards won by a female artist?",
-            options: ["Beyoncé", "Adele", "Whitney Houston", "Taylor Swift"],
-            answer: "Beyoncé"
-        },
-        {
-            question: "Which singer’s real name is Stefani Joanne Angelina Germanotta?",
-            options: ["Lady Gaga", "Katy Perry", "Adele", "Beyoncé"],
-            answer: "Lady Gaga"
-        },
-    ]}
+export let gameQuestions = [
+    {
+        category: "Capitals",
+        questions: [
+            { question: "What is the capital of Australia?", options: ["Sydney", "Melbourne", "Canberra", "Perth"], answer: "Canberra" },
+            { question: "Which capital city is known as the 'City of a Hundred Spires'?", options: ["Prague", "Vienna", "Budapest", "Warsaw"], answer: "Prague" },
+            { question: "What is the capital of Canada?", options: ["Toronto", "Vancouver", "Ottawa", "Montreal"], answer: "Ottawa" },
+            { question: "Which capital is the highest above sea level?", options: ["La Paz", "Quito", "Thimphu", "Kathmandu"], answer: "La Paz" },
+            { question: "Which African capital city is located on two continents?", options: ["Cairo", "Istanbul", "Rabat", "Tripoli"], answer: "Istanbul" },
+            { question: "What is the capital of New Zealand?", options: ["Auckland", "Wellington", "Christchurch", "Hamilton"], answer: "Wellington" },
+            { question: "Which capital city has the nickname 'The Eternal City'?", options: ["Athens", "Rome", "Lisbon", "Jerusalem"], answer: "Rome" },
+            { question: "What is the capital of Iceland?", options: ["Reykjavik", "Oslo", "Helsinki", "Stockholm"], answer: "Reykjavik" },
+            { question: "Which South American capital city is the closest to the Equator?", options: ["Quito", "Bogotá", "Lima", "Caracas"], answer: "Quito" },
+            { question: "What is the capital of Thailand?", options: ["Bangkok", "Chiang Mai", "Phuket", "Pattaya"], answer: "Bangkok" },
+            { question: "Which capital city is built on 14 islands?", options: ["Stockholm", "Amsterdam", "Venice", "Copenhagen"], answer: "Stockholm" },
+            { question: "What is the capital of Kenya?", options: ["Mombasa", "Nairobi", "Kisumu", "Eldoret"], answer: "Nairobi" },
+            { question: "Which European capital is known for the Atomium landmark?", options: ["Brussels", "Paris", "Berlin", "Madrid"], answer: "Brussels" },
+            { question: "What is the capital of Mongolia?", options: ["Ulaanbaatar", "Astana", "Tashkent", "Bishkek"], answer: "Ulaanbaatar" },
+            { question: "Which capital city has a famous opera house shaped like sails?", options: ["Sydney", "Melbourne", "Auckland", "Perth"], answer: "Sydney" },
+            { question: "What is the capital of Argentina?", options: ["Buenos Aires", "Córdoba", "Rosario", "Mendoza"], answer: "Buenos Aires" },
+            { question: "Which capital city hosts the historic Red Square?", options: ["Moscow", "Saint Petersburg", "Kiev", "Warsaw"], answer: "Moscow" },
+            { question: "What is the capital of South Korea?", options: ["Busan", "Seoul", "Incheon", "Daegu"], answer: "Seoul" },
+            { question: "Which capital city is famous for its canals and gondolas?", options: ["Venice", "Amsterdam", "Stockholm", "Bruges"], answer: "Venice" },
+            { question: "What is the capital of Turkey?", options: ["Istanbul", "Ankara", "Izmir", "Bursa"], answer: "Ankara" }
+        ]
+    },
+    {
+        category: "Movies",
+        questions: [
+            { question: "Which movie features the quote 'May the Force be with you'?", options: ["Star Wars", "Star Trek", "Guardians of the Galaxy", "The Fifth Element"], answer: "Star Wars" },
+            { question: "Which actor played the Joker in 'The Dark Knight'?", options: ["Joaquin Phoenix", "Heath Ledger", "Jack Nicholson", "Jared Leto"], answer: "Heath Ledger" },
+            { question: "What is the highest-grossing film of all time?", options: ["Avatar", "Avengers: Endgame", "Titanic", "Star Wars: The Force Awakens"], answer: "Avengers: Endgame" },
+            { question: "Which TV show features characters named Sheldon and Leonard?", options: ["Friends", "The Big Bang Theory", "How I Met Your Mother", "Modern Family"], answer: "The Big Bang Theory" },
+            { question: "Who directed 'Inception'?", options: ["Christopher Nolan", "Steven Spielberg", "James Cameron", "Quentin Tarantino"], answer: "Christopher Nolan" },
+            { question: "Which movie won Best Picture at the Oscars in 2020?", options: ["1917", "Parasite", "Joker", "Once Upon a Time in Hollywood"], answer: "Parasite" },
+            { question: "Which actress played Katniss Everdeen in 'The Hunger Games'?", options: ["Emma Watson", "Jennifer Lawrence", "Shailene Woodley", "Hailee Steinfeld"], answer: "Jennifer Lawrence" },
+            { question: "Which animated movie features a character named Woody?", options: ["Toy Story", "Finding Nemo", "Cars", "Despicable Me"], answer: "Toy Story" },
+            { question: "What is the longest-running scripted TV show in the U.S.?", options: ["The Simpsons", "Gunsmoke", "Law & Order", "Grey's Anatomy"], answer: "The Simpsons" },
+            { question: "Which movie features the song 'My Heart Will Go On'?", options: ["Titanic", "Romeo + Juliet", "Moulin Rouge!", "The Bodyguard"], answer: "Titanic" },
+            { question: "Who played Jack Dawson in 'Titanic'?", options: ["Brad Pitt", "Leonardo DiCaprio", "Johnny Depp", "Matt Damon"], answer: "Leonardo DiCaprio" },
+            { question: "Which TV series is set in the fictional town of Hawkins, Indiana?", options: ["Stranger Things", "Breaking Bad", "The OA", "Dark"], answer: "Stranger Things" },
+            { question: "Who voiced the character of Simba in the 1994 'Lion King'?", options: ["Matthew Broderick", "James Earl Jones", "Jeremy Irons", "Nathan Lane"], answer: "Matthew Broderick" },
+            { question: "Which director is famous for horror movies like 'Psycho' and 'Vertigo'?", options: ["Alfred Hitchcock", "John Carpenter", "Wes Craven", "Dario Argento"], answer: "Alfred Hitchcock" },
+            { question: "Which movie franchise features the characters Frodo and Gandalf?", options: ["Harry Potter", "The Hobbit", "The Lord of the Rings", "Chronicles of Narnia"], answer: "The Lord of the Rings" },
+            { question: "Who plays Iron Man in the Marvel Cinematic Universe?", options: ["Chris Evans", "Robert Downey Jr.", "Chris Hemsworth", "Mark Ruffalo"], answer: "Robert Downey Jr." },
+            { question: "Which TV show features the coffee shop Central Perk?", options: ["Friends", "Seinfeld", "How I Met Your Mother", "The Office"], answer: "Friends" },
+            { question: "Which film is about a fish searching for his son?", options: ["Shark Tale", "Finding Nemo", "The Little Mermaid", "Ocean's Eleven"], answer: "Finding Nemo" },
+            { question: "Which movie stars Tom Hanks stranded on an island with a volleyball named Wilson?", options: ["Cast Away", "Life of Pi", "127 Hours", "The Martian"], answer: "Cast Away" },
+            { question: "Which TV series is based on the novels by George R.R. Martin?", options: ["The Witcher", "The Mandalorian", "Game of Thrones", "Vikings"], answer: "Game of Thrones" }
+        ]
+    },
+    {
+        category: "Music",
+        questions: [
+            { question: "Which band released the album 'Abbey Road'?", options: ["The Beatles", "The Rolling Stones", "Pink Floyd", "Queen"], answer: "The Beatles" },
+            { question: "Who is known as the 'King of Pop'?", options: ["Elvis Presley", "Michael Jackson", "Prince", "Justin Timberlake"], answer: "Michael Jackson" },
+            { question: "Which singer's real name is Stefani Joanne Angelina Germanotta?", options: ["Lady Gaga", "Katy Perry", "Adele", "Beyoncé"], answer: "Lady Gaga" },
+            { question: "Which female artist has won the most Grammy Awards?", options: ["Beyoncé", "Taylor Swift", "Whitney Houston", "Adele"], answer: "Beyoncé" },
+            { question: "Which song begins with 'Is this the real life? Is this just fantasy?'", options: ["Bohemian Rhapsody", "Hotel California", "Stairway to Heaven", "Imagine"], answer: "Bohemian Rhapsody" },
+            { question: "Which British band sang 'Wonderwall'?", options: ["Oasis", "Blur", "Coldplay", "Radiohead"], answer: "Oasis" },
+            { question: "Which rapper is known as 'Slim Shady'?", options: ["Eminem", "Dr. Dre", "Snoop Dogg", "50 Cent"], answer: "Eminem" },
+            { question: "Which Swedish DJ released the hit 'Wake Me Up'?", options: ["Avicii", "David Guetta", "Calvin Harris", "Zedd"], answer: "Avicii" },
+            { question: "Who sang 'Rolling in the Deep'?", options: ["Adele", "Beyoncé", "Rihanna", "Lady Gaga"], answer: "Adele" },
+            { question: "Which band had hits like 'Hotel California' and 'Take It Easy'?", options: ["Eagles", "Fleetwood Mac", "Journey", "Pink Floyd"], answer: "Eagles" },
+            { question: "Which song starts with the lyrics 'Just a small town girl, living in a lonely world'?", options: ["Don't Stop Believin'", "Sweet Child O' Mine", "Livin' on a Prayer", "Eye of the Tiger"], answer: "Don't Stop Believin'" },
+            { question: "Which female artist performed 'Bad Romance'?", options: ["Lady Gaga", "Katy Perry", "Rihanna", "Madonna"], answer: "Lady Gaga" },
+            { question: "Which band is famous for the hit 'Stairway to Heaven'?", options: ["Led Zeppelin", "Queen", "Pink Floyd", "The Who"], answer: "Led Zeppelin" },
+            { question: "Which singer released the album '25'?", options: ["Adele", "Beyoncé", "Taylor Swift", "Rihanna"], answer: "Adele" },
+            { question: "Who sang 'Thriller'?", options: ["Michael Jackson", "Prince", "David Bowie", "Elton John"], answer: "Michael Jackson" },
+            { question: "Which rock band released 'Smoke on the Water'?", options: ["Deep Purple", "Led Zeppelin", "AC/DC", "Queen"], answer: "Deep Purple" },
+            { question: "Which boy band sang 'I Want It That Way'?", options: ["Backstreet Boys", "NSYNC", "Take That", "Boyzone"], answer: "Backstreet Boys" },
+            { question: "Who is the lead singer of U2?", options: ["Bono", "Sting", "Mick Jagger", "Bruce Springsteen"], answer: "Bono" },
+            { question: "Which female artist sang 'Shake It Off'?", options: ["Taylor Swift", "Katy Perry", "Ariana Grande", "Dua Lipa"], answer: "Taylor Swift" },
+            { question: "Which band released 'Comfortably Numb'?", options: ["Pink Floyd", "The Rolling Stones", "Led Zeppelin", "Queen"], answer: "Pink Floyd" }
+        ]
+    },
+    {
+        category: "Football",
+        questions: [
+            { question: "Which country hosted the first FIFA World Cup in 1930?", options: ["Uruguay", "Brazil", "Italy", "France"], answer: "Uruguay" },
+            { question: "Who won the 2018 FIFA World Cup?", options: ["France", "Croatia", "Germany", "Brazil"], answer: "France" },
+            { question: "Which club has won the most Champions League titles?", options: ["Real Madrid", "AC Milan", "Liverpool", "Barcelona"], answer: "Real Madrid" },
+            { question: "Which Portuguese club is nicknamed 'Dragões' (Dragons)?", options: ["Benfica", "Porto", "Sporting CP", "Braga"], answer: "Porto" },
+            { question: "Which team won the 2022 Premier League?", options: ["Manchester City", "Liverpool", "Chelsea", "Arsenal"], answer: "Manchester City" },
+            { question: "Which Spanish club is known as 'Los Blancos'?", options: ["Real Madrid", "Barcelona", "Atlético Madrid", "Sevilla"], answer: "Real Madrid" },
+            { question: "Which player won the 2021 Ballon d'Or?", options: ["Lionel Messi", "Cristiano Ronaldo", "Robert Lewandowski", "Karim Benzema"], answer: "Lionel Messi" },
+            { question: "Who is the all-time top scorer in La Liga?", options: ["Lionel Messi", "Cristiano Ronaldo", "Telmo Zarra", "Raúl"], answer: "Lionel Messi" },
+            { question: "Which club won the 2022–23 UEFA Europa League?", options: ["Sevilla", "Roma", "Manchester United", "Feyenoord"], answer: "Sevilla" },
+            { question: "Which Portuguese player transferred from Sporting to Manchester United in 2003?", options: ["Cristiano Ronaldo", "Luis Figo", "João Moutinho", "Nani"], answer: "Cristiano Ronaldo" },
+            { question: "Which club won the 2022 FIFA Club World Cup?", options: ["Real Madrid", "Palmeiras", "Al Hilal", "Monterrey"], answer: "Real Madrid" },
+            { question: "Which Premier League club is nicknamed 'The Red Devils'?", options: ["Manchester United", "Liverpool", "Arsenal", "Chelsea"], answer: "Manchester United" },
+            { question: "Who scored the winning goal in the 2010 World Cup final?", options: ["Andrés Iniesta", "David Villa", "Carles Puyol", "Xavi"], answer: "Andrés Iniesta" },
+            { question: "Which club has the most Primeira Liga titles?", options: ["Benfica", "Porto", "Sporting CP", "Braga"], answer: "Benfica" },
+            { question: "Which player is nicknamed 'CR7'?", options: ["Cristiano Ronaldo", "Lionel Messi", "Kylian Mbappé", "Neymar"], answer: "Cristiano Ronaldo" },
+            { question: "Which French club is nicknamed 'Les Parisiens'?", options: ["PSG", "Marseille", "Lyon", "Monaco"], answer: "PSG" },
+            { question: "Which team won the 2021–22 La Liga?", options: ["Real Madrid", "Barcelona", "Atlético Madrid", "Sevilla"], answer: "Real Madrid" },
+            { question: "Who is the all-time top scorer in Premier League history?", options: ["Alan Shearer", "Wayne Rooney", "Harry Kane", "Sergio Agüero"], answer: "Alan Shearer" },
+            { question: "Which club won the 2019–20 Champions League?", options: ["Bayern Munich", "Paris Saint-Germain", "Liverpool", "Barcelona"], answer: "Bayern Munich" },
+            { question: "Which Portuguese club is known for developing youth talent like Figo and Ronaldo?", options: ["Benfica", "Porto", "Sporting CP", "Braga"], answer: "Sporting CP" }
+        ]
+    },
+    {
+        category: "Pokemon",
+        questions: [
+            { question: "Which Pokémon evolves from Bulbasaur?", options: ["Ivysaur", "Venusaur", "Charmander", "Squirtle"], answer: "Ivysaur" },
+            { question: "Which Pokémon is known as the Electric Mouse?", options: ["Pikachu", "Raichu", "Electabuzz", "Magnemite"], answer: "Pikachu" },
+            { question: "Which Fire-type starter Pokémon is from Generation 1?", options: ["Charmander", "Cyndaquil", "Torchic", "Chimchar"], answer: "Charmander" },
+            { question: "Which Water-type starter evolves into Feraligatr?", options: ["Totodile", "Squirtle", "Mudkip", "Piplup"], answer: "Totodile" },
+            { question: "Which Legendary Pokémon is the guardian of the sea in Generation 2?", options: ["Lugia", "Ho-Oh", "Suicune", "Kyogre"], answer: "Lugia" },
+            { question: "Which Hoenn starter evolves into Blaziken?", options: ["Torchic", "Treecko", "Mudkip", "Chimchar"], answer: "Torchic" },
+            { question: "Which Pokémon is known as the 'Dragon Pokémon' of Hoenn?", options: ["Rayquaza", "Salamence", "Garchomp", "Dragonite"], answer: "Rayquaza" },
+            { question: "Which Sinnoh starter is a Grass-type?", options: ["Turtwig", "Chimchar", "Piplup", "Snivy"], answer: "Turtwig" },
+            { question: "Which Pokémon evolves from Piplup?", options: ["Prinplup", "Empoleon", "Infernape", "Marshtomp"], answer: "Prinplup" },
+            { question: "Which Generation 2 Legendary Pokémon represents the winds?", options: ["Lugia", "Ho-Oh", "Raikou", "Entei"], answer: "Lugia" },
+            { question: "Which Pokémon evolves from Chimchar?", options: ["Monferno", "Infernape", "Blaziken", "Charmeleon"], answer: "Monferno" },
+            { question: "Which Pokémon evolves into Roserade?", options: ["Roselia", "Budew", "Bellossom", "Shaymin"], answer: "Roselia" },
+            { question: "Which Kanto Pokémon evolves into Gyarados?", options: ["Magikarp", "Feebas", "Shellder", "Poliwag"], answer: "Magikarp" },
+            { question: "Which Generation 4 Pokémon evolves into Garchomp?", options: ["Gible", "Gabite", "Dragonair", "Dratini"], answer: "Gabite" },
+            { question: "Which Hoenn Grass-type starter evolves into Sceptile?", options: ["Treecko", "Turtwig", "Bulbasaur", "Snivy"], answer: "Treecko" },
+            { question: "Which Pokémon is the final evolution of Cyndaquil?", options: ["Typhlosion", "Infernape", "Blaziken", "Charizard"], answer: "Typhlosion" },
+            { question: "Which Legendary Pokémon is known as the Time Travel Pokémon?", options: ["Celebi", "Mew", "Jirachi", "Dialga"], answer: "Celebi" },
+            { question: "Which Sinnoh Pokémon is a Water-type penguin starter?", options: ["Piplup", "Mudkip", "Totodile", "Oshawott"], answer: "Piplup" },
+            { question: "Which Kanto Pokémon has the highest base Attack stat among starters?", options: ["Charizard", "Blastoise", "Venusaur", "Mewtwo"], answer: "Charizard" },
+            { question: "Which Pokémon is known as the Aura Pokémon in Generation 4?", options: ["Lucario", "Garchomp", "Infernape", "Togekiss"], answer: "Lucario" }
+        ]
+    },
+    {
+        category: "Records",
+        questions: [
+            { question: "Which unusual endurance feat was performed for over 9 hours straight?", options: ["Hula hooping", "Juggling", "Standing on one leg", "Bouncing on a ball"], answer: "Hula hooping" },
+            { question: "Which weird record involves the most number of T-shirts worn at once?", options: ["257", "150", "300", "200"], answer: "257" },
+            { question: "Which unusual feat is the fastest time to inflate a balloon with the nose and pop it?", options: ["12.5 seconds", "8.3 seconds", "10.7 seconds", "15 seconds"], answer: "12.5 seconds" },
+            { question: "What is the record for the most straws stuffed in a mouth at once?", options: ["400", "200", "350", "500"], answer: "400" },
+            { question: "Which is the fastest time to peel and eat a banana?", options: ["8.17 seconds", "5.23 seconds", "10.5 seconds", "6.78 seconds"], answer: "8.17 seconds" },
+            { question: "Who holds the record for the fastest 100m sprint?", options: ["Usain Bolt", "Tyson Gay", "Yohan Blake", "Justin Gatlin"], answer: "Usain Bolt" },
+            { question: "What is the tallest building in the world as of 2023?", options: ["Burj Khalifa", "Shanghai Tower", "Abraj Al-Bait Clock Tower", "One World Trade Center"], answer: "Burj Khalifa" },
+            { question: "Which country holds the record for most Olympic gold medals?", options: ["USA", "China", "Russia", "Germany"], answer: "USA" },
+            { question: "Who holds the record for most goals in a calendar year?", options: ["Lionel Messi", "Cristiano Ronaldo", "Gerd Müller", "Pele"], answer: "Lionel Messi" },
+            { question: "Which animal holds the record for fastest land speed?", options: ["Cheetah", "Lion", "Horse", "Pronghorn"], answer: "Cheetah" },
+            { question: "Which is the largest mammal in the world?", options: ["Blue Whale", "Elephant", "Hippopotamus", "Giraffe"], answer: "Blue Whale" },
+            { question: "Which person has visited the most countries?", options: ["Gunnar Garfors", "Michael Palin", "Colin O'Brady", "Rick Steves"], answer: "Gunnar Garfors" },
+            { question: "Which is the longest river in the world?", options: ["Nile", "Amazon", "Yangtze", "Mississippi"], answer: "Nile" },
+            { question: "Who holds the record for the longest time in space?", options: ["Gennady Padalka", "Yuri Gagarin", "Valeri Polyakov", "Chris Hadfield"], answer: "Gennady Padalka" },
+            { question: "Which human holds the record for highest vertical jump?", options: ["Eddy Alvarez", "Michael Jordan", "LeBron James", "Kadour Ziani"], answer: "Kadour Ziani" },
+            { question: "Which is the fastest roller coaster in the world?", options: ["Formula Rossa", "Kingda Ka", "Top Thrill Dragster", "Steel Dragon 2000"], answer: "Formula Rossa" },
+            { question: "Which city has the highest population density?", options: ["Manila", "Mumbai", "Dhaka", "Kolkata"], answer: "Manila" },
+            { question: "Which human achievement set a record for deepest cave explored?", options: ["Krubera Cave", "Cheve Cave", "Son Doong", "Mammoth Cave"], answer: "Krubera Cave" },
+            { question: "Which is the heaviest aircraft ever built?", options: ["Antonov An-225", "Boeing 747", "Lockheed C-5 Galaxy", "Airbus A380"], answer: "Antonov An-225" },
+            { question: "Which bridge is the longest in the world?", options: ["Danyang–Kunshan Grand Bridge", "Lake Pontchartrain Causeway", "Akashi Kaikyō Bridge", "Changhua–Kaohsiung Viaduct"], answer: "Danyang–Kunshan Grand Bridge" }
+        ]
+    },
+    {
+        category: "Geography",
+        questions: [
+            { question: "Which country has the largest population in the world?", options: ["Russia", "India", "China", "United States of America"], answer: "India" },
+            { question: "Which European capital was once underwater?", options: ["Amsterdam", "Venice", "Copenhagen", "Stockholm"], answer: "Amsterdam" },
+            { question: "Which country has a town actually called Dildo?", options: ["Ireland", "Canada", "Australia", "United Kingdom"], answer: "Canada" },
+            { question: "Which desert is the biggest in the world?", options: ["Sahara", "Gobi", "Kalahari", "Antarctica"], answer: "Antarctica" },
+            { question: "Which capital city is built on 14 islands and has 57 bridges?", options: ["Amsterdam", "Stockholm", "Venice", "Bangkok"], answer: "Stockholm" },
+            { question: "Which country has the most volcanoes?", options: ["Indonesia", "Japan", "United States", "Italy"], answer: "Indonesia" },
+            { question: "Which country is known as the Land of the Rising Sun?", options: ["Japan", "China", "Thailand", "South Korea"], answer: "Japan" },
+            { question: "Which river flows through Paris?", options: ["Seine", "Thames", "Danube", "Rhine"], answer: "Seine" },
+            { question: "Mount Kilimanjaro is located in which country?", options: ["Kenya", "Tanzania", "Uganda", "Ethiopia"], answer: "Tanzania" },
+            { question: "Which U.S. state has the longest coastline?", options: ["California", "Florida", "Alaska", "Texas"], answer: "Alaska" },
+            { question: "Which is the smallest country in the world?", options: ["Monaco", "San Marino", "Vatican City", "Liechtenstein"], answer: "Vatican City" },
+            { question: "Which African country has Portuguese as its official language?", options: ["Mozambique", "Nigeria", "Kenya", "Egypt"], answer: "Mozambique" },
+            { question: "Which mountain range separates Europe from Asia?", options: ["Alps", "Ural", "Caucasus", "Carpathians"], answer: "Ural" },
+            { question: "Which country is home to the Great Barrier Reef?", options: ["Australia", "Philippines", "Indonesia", "Fiji"], answer: "Australia" },
+            { question: "Which city is known as the 'Pearl of the Danube'?", options: ["Vienna", "Budapest", "Bratislava", "Belgrade"], answer: "Budapest" },
+            { question: "Which country has the most natural lakes?", options: ["Canada", "USA", "Finland", "Russia"], answer: "Canada" },
+            { question: "Which U.S. state is known as the 'Sunshine State'?", options: ["California", "Florida", "Texas", "Arizona"], answer: "Florida" },
+            { question: "Which river is the longest in South America?", options: ["Amazon", "Paraná", "Orinoco", "São Francisco"], answer: "Amazon" },
+            { question: "Which desert covers most of northern China and southern Mongolia?", options: ["Gobi", "Taklamakan", "Karakum", "Thar"], answer: "Gobi" },
+            { question: "Which country has the city of Timbuktu?", options: ["Mali", "Niger", "Sudan", "Algeria"], answer: "Mali" }
+        ]
+    },
+    {
+        category: "Foods",
+        questions: [
+            { question: "Which fruit is known as the 'king of fruits'?", options: ["Mango", "Durian", "Pineapple", "Banana"], answer: "Durian" },
+            { question: "What is the main ingredient in guacamole?", options: ["Tomato", "Avocado", "Onion", "Pepper"], answer: "Avocado" },
+            { question: "Which country is famous for sushi?", options: ["China", "Japan", "Thailand", "Korea"], answer: "Japan" },
+            { question: "Which cheese is traditionally used for pizza?", options: ["Mozzarella", "Cheddar", "Parmesan", "Brie"], answer: "Mozzarella" },
+            { question: "Which Italian pasta is shaped like little rice grains?", options: ["Orzo", "Fusilli", "Penne", "Spaghetti"], answer: "Orzo" },
+            { question: "Which fruit has its seeds on the outside?", options: ["Strawberry", "Apple", "Kiwi", "Blueberry"], answer: "Strawberry" },
+            { question: "What is the main ingredient in hummus?", options: ["Chickpeas", "Lentils", "Potatoes", "Beans"], answer: "Chickpeas" },
+            { question: "Which beverage is made from fermented grapes?", options: ["Wine", "Beer", "Cider", "Vodka"], answer: "Wine" },
+            { question: "What is the main ingredient in traditional Japanese miso soup?", options: ["Soybean paste", "Rice", "Seaweed", "Tofu"], answer: "Soybean paste" },
+            { question: "Which spice is the most expensive by weight?", options: ["Saffron", "Vanilla", "Cinnamon", "Cardamom"], answer: "Saffron" },
+            { question: "Which fruit is used to make traditional British jam called 'Marmalade'?", options: ["Orange", "Strawberry", "Raspberry", "Plum"], answer: "Orange" },
+            { question: "What is the main ingredient of a traditional Italian risotto?", options: ["Rice", "Pasta", "Polenta", "Potatoes"], answer: "Rice" },
+            { question: "Which country is the origin of the potato?", options: ["Peru", "Mexico", "USA", "Spain"], answer: "Peru" },
+            { question: "Which nut is used to make marzipan?", options: ["Almond", "Hazelnut", "Cashew", "Pistachio"], answer: "Almond" },
+            { question: "Which type of pasta is shaped like little ears?", options: ["Orecchiette", "Farfalle", "Penne", "Fusilli"], answer: "Orecchiette" },
+            { question: "Which fruit is the main ingredient in a classic French tarte Tatin?", options: ["Apple", "Pear", "Peach", "Cherry"], answer: "Apple" },
+            { question: "What is tofu made from?", options: ["Soybeans", "Rice", "Wheat", "Corn"], answer: "Soybeans" },
+            { question: "Which country is famous for the dish 'paella'?", options: ["Spain", "Italy", "Mexico", "France"], answer: "Spain" },
+            { question: "Which dessert is traditionally made with ladyfingers, coffee, and mascarpone?", options: ["Tiramisu", "Panna Cotta", "Baklava", "Creme Brulee"], answer: "Tiramisu" },
+            { question: "Which fruit is used to make traditional Italian limoncello?", options: ["Lemon", "Orange", "Grapefruit", "Lime"], answer: "Lemon" }
+        ]
+    },
+    {
+        category: "Science",
+        questions: [
+            { question: "What is the chemical symbol for gold?", options: ["Au", "Ag", "Gd", "Go"], answer: "Au" },
+            { question: "Which planet is known as the Red Planet?", options: ["Mars", "Venus", "Jupiter", "Mercury"], answer: "Mars" },
+            { question: "Which organ in the human body produces insulin?", options: ["Pancreas", "Liver", "Kidney", "Heart"], answer: "Pancreas" },
+            { question: "What gas do plants absorb from the atmosphere?", options: ["Carbon dioxide", "Oxygen", "Nitrogen", "Hydrogen"], answer: "Carbon dioxide" },
+            { question: "Which is the largest mammal in the world?", options: ["Blue whale", "Elephant", "Hippopotamus", "Giraffe"], answer: "Blue whale" },
+            { question: "What is the hardest natural substance on Earth?", options: ["Diamond", "Gold", "Iron", "Quartz"], answer: "Diamond" },
+            { question: "Which part of the cell contains genetic material?", options: ["Nucleus", "Cytoplasm", "Mitochondria", "Ribosome"], answer: "Nucleus" },
+            { question: "What is the boiling point of water at sea level?", options: ["100°C", "90°C", "120°C", "80°C"], answer: "100°C" },
+            { question: "Which planet has the most moons?", options: ["Saturn", "Jupiter", "Mars", "Earth"], answer: "Saturn" },
+            { question: "What is the main gas found in the Earth's atmosphere?", options: ["Nitrogen", "Oxygen", "Carbon dioxide", "Hydrogen"], answer: "Nitrogen" },
+            { question: "What part of the plant conducts photosynthesis?", options: ["Leaves", "Roots", "Stem", "Flowers"], answer: "Leaves" },
+            { question: "Which vitamin is produced when a person is exposed to sunlight?", options: ["Vitamin D", "Vitamin A", "Vitamin C", "Vitamin B12"], answer: "Vitamin D" },
+            { question: "What is the human body's largest organ?", options: ["Skin", "Liver", "Heart", "Lung"], answer: "Skin" },
+            { question: "Which element has the atomic number 1?", options: ["Hydrogen", "Helium", "Oxygen", "Carbon"], answer: "Hydrogen" },
+            { question: "What is the most abundant element in the Earth's crust?", options: ["Oxygen", "Silicon", "Aluminium", "Iron"], answer: "Oxygen" },
+            { question: "Which type of blood cells help fight infection?", options: ["White blood cells", "Red blood cells", "Platelets", "Plasma"], answer: "White blood cells" },
+            { question: "Which planet is closest to the Sun?", options: ["Mercury", "Venus", "Earth", "Mars"], answer: "Mercury" },
+            { question: "Which force keeps the planets in orbit around the Sun?", options: ["Gravity", "Magnetism", "Friction", "Electricity"], answer: "Gravity" },
+            { question: "Which organ purifies blood in the human body?", options: ["Kidney", "Liver", "Heart", "Lungs"], answer: "Kidney" },
+            { question: "Which gas do humans exhale?", options: ["Carbon dioxide", "Oxygen", "Nitrogen", "Methane"], answer: "Carbon dioxide" }
+        ]
+    }
 ];

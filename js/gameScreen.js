@@ -4,20 +4,23 @@ applyBackgroundGradient();
 
 const groups = JSON.parse(localStorage.getItem('groups')) || [];
 let currentCategory = JSON.parse(localStorage.getItem('currentCategory')) || 0;
+const numberQuestions = localStorage.getItem('numberQuestions') || 5;
 
-let questionIndex = 0;
 let currentGroup = 0;
 let questions = [];
 
-// Aux functions
-function randomInt(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
+function getRandomQuestions(questions, n) {
+  const shuffled = [...questions];
+  shuffled.sort(() => Math.random() - 0.5);
+  return shuffled.slice(0,n);
 }
+
 
 function setCategory(){
   let val = gameQuestions[currentCategory];
   let category = val.category;
-  questions = val.questions;
+
+  questions = getRandomQuestions(val.questions, numberQuestions);
 
   let catImg = document.getElementById("levelImage");
   catImg.src = "../assets/" + category + ".png";
@@ -30,7 +33,7 @@ function startCategorypoints(){
 // Game logic
 function handleAnswer(button) {
   // Get correct answer and group who is clicking in the button
-  const correctAnswer = questions[questionIndex].answer;
+  const correctAnswer = questions[0].answer;
   const group = groups[currentGroup];
 
   // Add group image to button
@@ -51,7 +54,6 @@ function handleAnswer(button) {
   if (button.textContent === correctAnswer) {
     group.categoryPoints[currentCategory] += 1;
     group.points += 1;
-
   }
   currentGroup++;
 
@@ -89,16 +91,16 @@ function renderGroups(){
     
 }
 
-function renderQuestion(i){
+function renderQuestion(){
   const questionContainer = document.getElementById('questionContainer');
   questionContainer.innerHTML = ''; 
 
   const question = document.createElement('h2');
-  question.textContent = questions[i].question;
+  question.textContent = questions[0].question;
   questionContainer.appendChild(question);
 }
 
-function renderOptions(i){
+function renderOptions(){
   const optionsContainer = document.getElementById('optionsContainer');
   optionsContainer.innerHTML = '';
 
@@ -108,7 +110,7 @@ function renderOptions(i){
   const secondRow = document.createElement('div');
   secondRow.classList.add('secondRow');
 
-  questions[i].options.forEach((option,i) => {
+  questions[0].options.forEach((option,i) => {
     const button = document.createElement('button');
     button.textContent = option;
     button.classList.add('optionButton');
@@ -129,7 +131,7 @@ function renderOptions(i){
 }
 
 function revealRightOption(){
-  const answer = questions[questionIndex].answer;
+  const answer = questions[0].answer;
   const optionsButtons = document.querySelectorAll('.optionButton');
   optionsButtons.forEach(button => {
     if(button.textContent === answer){
@@ -155,15 +157,14 @@ function renderGameScreen(){
   }
 
   console.log(groups);
-  questionIndex = randomInt(0,questions.length-1);
   renderGroups();
-  renderQuestion(questionIndex);
-  renderOptions(questionIndex);
+  renderQuestion();
+  renderOptions();
 }
 
 document.getElementById("nextQuestionButton").addEventListener('click', () => {
     currentGroup = 0;
-    questions.splice(questionIndex, 1);
+    questions.shift();
 
     const revealButton = document.getElementById('revealAnswerButton');
     revealButton.style.opacity = 0;

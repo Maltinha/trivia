@@ -7,7 +7,7 @@ let wName = "";
 let wPoints = 0;
 let wImg = "";
 
-function update_PermGroups(){
+function update_PermGroupsAndGroups(){
     groups.forEach(g => {
         if(g.points > wPoints){
             wName = g.name;
@@ -16,6 +16,8 @@ function update_PermGroups(){
         }
         const permGroup = permGroups.find(pg => pg.name === g.name);
         permGroup.points += g.points;
+        g.points = 0;
+        g.categoryPoints = [];
     });
     const winner = permGroups.find(g => g.name === wName);
     winner.wins += 1;
@@ -23,6 +25,7 @@ function update_PermGroups(){
 
     console.log(groups);
     console.log(permGroups);
+    localStorage.setItem('groups', JSON.stringify(groups));
     localStorage.setItem('permGroups', JSON.stringify(permGroups));
 }
 
@@ -35,10 +38,11 @@ function render_Winner(){
     winnerPoints.innerHTML = "Points: " + wPoints;
 }
 
-update_PermGroups();
+update_PermGroupsAndGroups();
 render_Winner()
 
 document.getElementById("homeButton").addEventListener('click', () => {
     localStorage.removeItem('currentCategory');
     window.location.href = '../index.html'
 });
+  
