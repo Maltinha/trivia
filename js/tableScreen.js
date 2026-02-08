@@ -4,6 +4,7 @@ applyBackgroundGradient();
 
 const groups = JSON.parse(localStorage.getItem('groups')) || [];
 let currentCategory = JSON.parse(localStorage.getItem('currentCategory')) || 0;
+let selectedCategories = JSON.parse(localStorage.getItem('selectedCategories')) || ['Geography','Football','Records','Music'];
 
 function renderGroups(){
     let groupsDisplay = document.getElementById("groups");
@@ -29,11 +30,10 @@ function renderGroups(){
 
 function renderTable(){
     const groupsNames = groups.map(g => g.name);
-    const categoriesNames = gameQuestions.map(cat => cat.category);
 
     const container = document.getElementById("tableContainer");
     container.innerHTML = "";
-    const columnCount = categoriesNames.length + 1;
+    const columnCount = selectedCategories.length + 1;
     container.style.gridTemplateColumns = `repeat(${columnCount}, 1fr)`;
 
     const emptyCell = document.createElement("div")
@@ -41,7 +41,7 @@ function renderTable(){
     container.appendChild(emptyCell);
 
     
-    categoriesNames.forEach(name => {   
+    selectedCategories.forEach(name => {   
         let categoryName = document.createElement("div");
         categoryName.textContent = name;
         categoryName.classList.add("gridItem");
@@ -62,8 +62,8 @@ function renderTable(){
                 container.appendChild(pointsCell);
             });
 
-        if(group.categoryPoints.length < categoriesNames.length){
-            for(let i = group.categoryPoints.length; i < categoriesNames.length; i++){
+        if(group.categoryPoints.length < selectedCategories.length){
+            for(let i = group.categoryPoints.length; i < selectedCategories.length; i++){
                 let emptyCell = document.createElement("div");
                 emptyCell.textContent = "-";
                 emptyCell.classList.add("gridItem");
@@ -76,7 +76,7 @@ function renderTable(){
 }
 
 document.getElementById("nextPageButton").addEventListener('click', () => {
-    if(currentCategory === gameQuestions.length){
+    if(currentCategory === selectedCategories.length){
         window.location.href = '../pages/rankPage.html';    
     } 
     else window.location.href = '../pages/gameScreen.html'

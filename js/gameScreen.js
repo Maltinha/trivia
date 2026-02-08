@@ -5,6 +5,7 @@ applyBackgroundGradient();
 const groups = JSON.parse(localStorage.getItem('groups')) || [];
 let currentCategory = JSON.parse(localStorage.getItem('currentCategory')) || 0;
 const numberQuestions = localStorage.getItem('numberQuestions') || 5;
+let selectedCategories = JSON.parse(localStorage.getItem('selectedCategories')) || ['Geography','Football','Records','Music'];
 
 let currentGroup = 0;
 let questions = [];
@@ -17,10 +18,10 @@ function getRandomQuestions(questions, n) {
 
 
 function setCategory(){
-  let val = gameQuestions[currentCategory];
-  let category = val.category;
+  let category = selectedCategories[currentCategory];
+  let categoryObject = gameQuestions.find(gq => gq.category === category);
 
-  questions = getRandomQuestions(val.questions, numberQuestions);
+  questions = getRandomQuestions(categoryObject.questions, numberQuestions);
 
   let catImg = document.getElementById("levelImage");
   catImg.src = "../assets/" + category + ".png";

@@ -5,6 +5,8 @@ let groups = JSON.parse(localStorage.getItem('groups')) || [];
 let permGroups = JSON.parse(localStorage.getItem('permGroups')) || [];
 let selectedCategories = JSON.parse(localStorage.getItem('selectedCategories')) || ['Geography','Football','Records','Music']
 
+
+
 //localStorage.clear();
 console.log("Permanent Groups");
 console.log(permGroups);
